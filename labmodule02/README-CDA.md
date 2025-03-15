@@ -9,6 +9,7 @@ Be sure to implement all the PIOT-CDA-* issues (requirements).
 NOTE: Include two full paragraphs describing your implementation approach by answering the questions listed below.
 
 What does your implementation do?
+
 En este capítulo se comienzan a implementar dos aplicaciones que se comunicarán entre sí y con un sistema centralizado, como un servidor o la nube. La implementación en el CDA se centró en la recopilación y gestión de datos del sistema. El principal objetivo era gestionar el rendimiento del sistema de la aplicación en un dispositivo limitado, con funciones clave como:
   
   - Recopilación de datos de rendimiento: Se recolecta información sobre el rendimiento del sistema, como el uso de CPU y la memoria utilizando tareas específicas.
@@ -17,6 +18,7 @@ En este capítulo se comienzan a implementar dos aplicaciones que se comunicará
 
 
 How does your implementation work?
+
 PIOT-CDA-02-001: Se crea el módulo ConstrainedDeviceApp, y definimos una clase llamada ConstrainedDeviceApp. Esta clase contiene métodos clave que gestionan el ciclo de vida de la aplicación:
 •	startApp(): Este método se encarga de iniciar la aplicación. Lo que hace es registrar un mensaje de información en los logs, indicando que la aplicación ha comenzado a ejecutarse.
 •	stopApp(): Este método detiene la aplicación, y también registra un mensaje de información en los logs, indicando que la aplicación ha sido detenida.
