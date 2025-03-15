@@ -10,20 +10,16 @@ NOTE: Include two full paragraphs describing your implementation approach by ans
 
 What does your implementation do? 
 
-Generación de Datos de Sensores Simulados
-El código emula la funcionalidad de los sensores, que serían dispositivos físicos en un entorno real. Los sensores, como los de temperatura, presión y humedad, generan datos que imitan las lecturas que estos dispositivos reales proporcionarían.
+Generación de Datos de Sensores Simulados: El código emula la funcionalidad de los sensores, que serían dispositivos físicos en un entorno real. Los sensores, como los de temperatura, presión y humedad, generan datos que imitan las lecturas que estos dispositivos reales proporcionarían.
 Para esto, se usa una clase denominada SensorDataGenerator, que simula el comportamiento de los sensores generando datos dentro de un rango definido. Estos valores generados son representaciones de las lecturas que un sensor real podría proporcionar en un entorno físico.
 Cada sensor tiene configuraciones como el rango de valores y su comportamiento está basado en umbral y límites configurables que se encuentran en los archivos de configuración.
 
-Simulación de Actuadores
-Se emula el comportamiento de actuadores con la clase BaseActuatorSimTask y sus derivados como HvacActuatorSimTask y HumidifierActuatorSimTask. Estos actuadores están programados para reaccionar a los datos de los sensores.
+Simulación de Actuadores: Se emula el comportamiento de actuadores con la clase BaseActuatorSimTask y sus derivados como HvacActuatorSimTask y HumidifierActuatorSimTask. Estos actuadores están programados para reaccionar a los datos de los sensores.
 
-Interacción entre Sensores y Actuadores
-La implementación incluye un módulo de orquestación que controla cómo los sensores y actuadores interactúan entre sí. El SensorAdapterManager es el encargado de gestionar la recolección periódica de datos de los sensores simulados. Cada sensor está asociado a una tarea de simulación que, cuando se ejecuta, genera nuevos datos. El SensorAdapterManager organiza la recolección de estos datos en intervalos de tiempo definidos y los pasa a las partes relevantes del sistema para su procesamiento.
+Interacción entre Sensores y Actuadores: La implementación incluye un módulo de orquestación que controla cómo los sensores y actuadores interactúan entre sí. El SensorAdapterManager es el encargado de gestionar la recolección periódica de datos de los sensores simulados. Cada sensor está asociado a una tarea de simulación que, cuando se ejecuta, genera nuevos datos. El SensorAdapterManager organiza la recolección de estos datos en intervalos de tiempo definidos y los pasa a las partes relevantes del sistema para su procesamiento.
 Los datos recopilados por los sensores se analizan para verificar si alguno de los valores cruza un umbral. Si esto ocurre, el sistema activa un actuador apropiado. Los comandos de los actuadores son enviados a través del ActuatorAdapterManager, que gestiona la activación y desactivación de los actuadores en función de las condiciones del sistema.
 
-Orquestación y Control
-Finalmente, todo el sistema de simulación es gestionado por el DeviceDataManager, que coordina los distintos componentes del sistema: la recolección de datos de los sensores, el procesamiento de esos datos para detectar cambios relevantes y el envío de comandos a los actuadores. Este administrador se asegura de que, cuando un sensor detecta un cambio significativo, el actuador adecuado se active o desactive para ajustarse a la nueva condición.
+Orquestación y Control: Finalmente, todo el sistema de simulación es gestionado por el DeviceDataManager, que coordina los distintos componentes del sistema: la recolección de datos de los sensores, el procesamiento de esos datos para detectar cambios relevantes y el envío de comandos a los actuadores. Este administrador se asegura de que, cuando un sensor detecta un cambio significativo, el actuador adecuado se active o desactive para ajustarse a la nueva condición.
 
 
 How does your implementation work?
