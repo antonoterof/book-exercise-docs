@@ -16,9 +16,12 @@ A su vez, se configuran tareas que simulan sensores y actuadores, para que se pu
 How does your implementation work?
 
 PIOT-CFG-04-001: Primero configuramos el emulador Sense-Emu para simular un Sense HAT, que es una placa de expansión para Raspberry Pi. Sense HAT es un hardware físico que se conecta a la Raspberry Pi para proporcionar lecturas de estos sensores. El emulador tiene una interfaz gráfica (GUI) que permite simular lecturas de sensores, lo cual es útil para probar sin necesidad de hardware real.
+
 PIOT-CDA-04-001: En la primera tarea creamos tres clases (HumiditySensorEmulatorTask, PressureSensorEmulatorTask y TemperatureSensorEmulatorTask) que heredan de BaseSensorSimTask. Estas clases se encargan de simular datos de sensores. Se sobrecarga el método generateTelemetry() para recoger los datos de los sensores y devolverlos como un objeto SensorData.
+
 PIOT-CDA-04-002: Luego, se crean y configuran actuadores emulados (HumidifierEmulatorTask, HvacEmulatorTas y LedDisplayEmulatorTask) que heredan de la clase base BaseActuatorSimTask. Controlan la activación y desactivación de los actuadores mostrando el estado en la pantalla LED del Sense-Emu.
 PIOT-CDA-04-003: Se añade a la clase SensorAdapterManager la posibilidad de poder usar emuladores para generar los datos o simularlos. Para ello se debe establecer en la configuración de la aplicación la variable enableEmulator como verdadera.
+
 PIOT-CDA-04-004: De la misma forma que en la tarea anterior, añadimos a la clase ActuatorAdapterManager soporte para actuadores emulados. Esto permite que, si se activa la opción de emulador en la configuración, el sistema cargue dinámicamente los actuadores emulados. Si no se habilita el emulador, se utilizan actuadores simulados.
 
 
