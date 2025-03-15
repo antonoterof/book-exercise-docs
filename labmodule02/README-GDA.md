@@ -20,11 +20,17 @@ En este capítulo se comienzan a implementar dos aplicaciones que se comunicará
 How does your implementation work?
 
 PIOT-GDA-02-001: Se crea la clase GatewayDeviceApp que contiene la lógica de la aplicación. Contiene métodos para iniciar, detener y configurar la aplicación.
+
 PIOT-GDA-02-002: Creamos la clase SystemPerformanceManager que de igual forma que el CDA, en el GDA gestiona el rendimiento del sistema, configurando parámetros como el ciclo de sondeo. Por ahora solo creamos dos funciones de start y stop de este.
+
 PIOT-GDA-02-003: Importamos el SystemPerformanceManager en el GatewayDeviceApp de forma que ahora este módulo gestionará su funcionamiento mendiante los métodos startApp y stopApp que iniciará, y pararán el SystemPerformanceManager respectivamente.
+
 PIOT-GDA-02-004: Ahora se crea la clase BaseSystemUtilTask que proporciona una estructura base para gestionar tareas relacionadas con el sistema, en la que se definen propiedades comunes y métodos que luego serán utilizados y extendidos por clases derivadas. 
+
 PIOT-GDA-02-005: Se crea la clase SystemCpuUtilTask que extiende la clase e implementa el método plantilla getTelemetryValue() que obtiene el porcentaje de utilización de la CPU en el momento actual y lo devuelve como un valor flotante.
+
 PIOT-GDA-02-006: De nuevo, creamos otro módulo denominado SystemMemUtilTask que también extiende BaseSystemUtilTask y se encarga de obtener el porcentaje de memoria del sistema usada.
+
 PIOT-GDA-02-007: Se vuelven a integrar las clases SystemCpuUtilTask y SystemMemUtilTask dentro del SystemPerformanceManager convirtiéndose este en el encargado de monitorear la cpu y la memoria del sistema.
 
 
