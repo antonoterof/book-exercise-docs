@@ -20,9 +20,10 @@ En este capítulo se comienzan a implementar dos aplicaciones que se comunicará
 How does your implementation work?
 
 PIOT-CDA-02-001: Se crea el módulo ConstrainedDeviceApp, y definimos una clase llamada ConstrainedDeviceApp. Esta clase contiene métodos clave que gestionan el ciclo de vida de la aplicación:
-  •	startApp(): Este método se encarga de iniciar la aplicación. Lo que hace es registrar un mensaje de información en los logs, indicando que la aplicación ha comenzado a ejecutarse.
-  •	stopApp(): Este método detiene la aplicación, y también registra un mensaje de información en los logs, indicando que la aplicación ha sido detenida.
-  •	main(): La función principal de entrada que se encarga de crear una instancia de la clase ConstrainedDeviceApp, llama a startApp(), espera 65 segundos (simulando el tiempo de ejecución de la aplicación), y luego llama a stopApp().
+
+  - startApp(): Este método se encarga de iniciar la aplicación. Lo que hace es registrar un mensaje de información en los logs, indicando que la aplicación ha comenzado a ejecutarse.  
+  - stopApp(): Este método detiene la aplicación, y también registra un mensaje de información en los logs, indicando que la aplicación ha sido detenida.  
+  - main(): La función principal de entrada que se encarga de crear una instancia de la clase ConstrainedDeviceApp, llama a startApp(), espera 65 segundos (simulando el tiempo de ejecución de la aplicación), y luego llama a stopApp().
   
 PIOT-CDA-02-002: Creamos la clase SystemPerformanceManager que gestiona el rendimiento del sistema, configurando y controlando parámetros como el ciclo de sondeo y la ubicación del dispositivo, que se leen desde un archivo de configuración.
 
