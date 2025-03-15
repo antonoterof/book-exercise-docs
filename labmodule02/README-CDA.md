@@ -20,14 +20,20 @@ En este capítulo se comienzan a implementar dos aplicaciones que se comunicará
 How does your implementation work?
 
 PIOT-CDA-02-001: Se crea el módulo ConstrainedDeviceApp, y definimos una clase llamada ConstrainedDeviceApp. Esta clase contiene métodos clave que gestionan el ciclo de vida de la aplicación:
-•	startApp(): Este método se encarga de iniciar la aplicación. Lo que hace es registrar un mensaje de información en los logs, indicando que la aplicación ha comenzado a ejecutarse.
-•	stopApp(): Este método detiene la aplicación, y también registra un mensaje de información en los logs, indicando que la aplicación ha sido detenida.
-•	main(): La función principal de entrada que se encarga de crear una instancia de la clase ConstrainedDeviceApp, llama a startApp(), espera 65 segundos (simulando el tiempo de ejecución de la aplicación), y luego llama a stopApp().
+  •	startApp(): Este método se encarga de iniciar la aplicación. Lo que hace es registrar un mensaje de información en los logs, indicando que la aplicación ha comenzado a ejecutarse.
+  •	stopApp(): Este método detiene la aplicación, y también registra un mensaje de información en los logs, indicando que la aplicación ha sido detenida.
+  •	main(): La función principal de entrada que se encarga de crear una instancia de la clase ConstrainedDeviceApp, llama a startApp(), espera 65 segundos (simulando el tiempo de ejecución de la aplicación), y luego llama a stopApp().
+  
 PIOT-CDA-02-002: Creamos la clase SystemPerformanceManager que gestiona el rendimiento del sistema, configurando y controlando parámetros como el ciclo de sondeo y la ubicación del dispositivo, que se leen desde un archivo de configuración.
+
 PIOT-CDA-02-003: Se integra el SystemPerformanceManager dentro de la aplicación ConstrainedDeviceApp para gestionar el rendimiento del sistema.
+
 PIOT-CDA-02-004: Se crea la clase BaseSystemUtilTask que proporciona una estructura base para gestionar tareas relacionadas con el sistema, en la que se definen propiedades comunes y métodos que luego serán utilizados y extendidos por clases derivadas.
+
 PIOT-CDA-02-005: Se crea la clase SystemCpuUtilTask que extiende la clase e implementa el método plantilla getTelemetryValue() que obtiene el porcentaje de utilización de la CPU en el momento actual y lo devuelve como un valor flotante.
+
 PIOT-CDA-02-006: De nuevo, creamos otro módulo denominado SystemMemUtilTask que también extiende BaseSystemUtilTask y se encarga de obtener el porcentaje de memoria del sistema usada.
+
 PIOT-CDA-02-007: Se integran las clases SystemCpuUtilTask y SystemMemUtilTask dentro del SystemPerformanceManager convirtiéndose este en el encargado de monitorear la cpu y la memoria del sistema.
 
 
