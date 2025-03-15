@@ -25,16 +25,24 @@ Orquestación y Control: Finalmente, todo el sistema de simulación es gestionad
 How does your implementation work?
 
 PIOT-CDA-04-001: SensorData, que extiende de BaseIotData, está diseñada para representar datos de sensores. Configura el tipo de sensor, su nombre y valor del sensor y actualiza su valor si los datos proporcionados son del tipo adecuado. ActuatorData, que también extiende de BaseIotData, está diseñada para representar los datos de un actuador. Configura el tipo de actuador, nombre, valor, comando (acción a realizar), datos de estado y un indicador de respuesta. Además, actualiza los valores de comando, datos de estado, valor e indicador de respuesta si los datos proporcionados son del tipo adecuado. SystemPerformanceData almacena y actualiza datos sobre el rendimiento de un sistema (uso de CPU y memoria).
+
 PIOT-CDA-04-002: BaseSensorSimTask se usa para la generación de datos de sensores, ya sea generando valores aleatorios o utilizando un conjunto de datos predefinido. Crea una instancia de datos de sensor, que usa para almacenar los datos de simulación de sensor más recientes, y proporciona una interfaz pública para generar una nueva instancia y acceder a sus datos.
+
 PIOT-CDA-04-003: Las clases HumiditySensorSimTask, PressureSensorSimTask y TemperatureSensorSimTask extienden de la clase base BaseSensorSimTask y cada una simula la generación de datos de sensores específicos (humedad, presión y temperatura respectivamente).
+
 PIOT-CDA-04-004: La clase BaseActuatorSimTask simula la activación y desactivación de un actuador. Cuando recibe un comando, procesa si debe activar o desactivar el actuador según el comando recibido (ON/OFF). Proporciona una funcionalidad base para manejar actuadores. Define métodos comunes como activar y desactivar un actuador mediante el método updateActuator().
+
 PIOT-CDA-04-005: Las clases HumidityActuatorSimTask y HvacActuatorSimTask heredan de BaseActuatorSimTask y simulan el comportamiento de dos actuadores específicos (un humidificador y un sistema HVAC (calefacción, aire acondicionado y ventilación) respectivamente).
+
 PIOT-CDA-04-006: La clase SensorAdapterManager se encarga de coordinar la simulación y la recolección periódica de datos de los sensores (humedad, presión, temperatura). Su función principal es:
   1.	Generar datos simulados de sensores.
   2.	Recolección periódica de esos datos a intervalos regulares.
   3.	Enviar los datos generados a otros componentes para su procesamiento.
+
 PIOT-CDA-04-007: La clase ActuatorAdapterManager se encarga de coordinar los actuadores. Recibe comandos (como encender o apagar un actuador) y ejecuta las acciones correspondientes en esos actuadores.
+
 PIOT-CDA-04-008: La clase DeviceDataManager gestiona y coordina todos los datos de los dispositivos, actuadores, sensores y rendimiento del sistema. Se encarga de recibir datos de los sensores, procesar comandos de los actuadores, y manejar los datos de rendimiento del sistema.
+
 PIOT-CDA-04-009: Creeamos una instancia de DeviceDataManager dentro de ConstrainedDeviceApp u se invoca a los métodos de inicio/detención del administrador dentro de los métodos de inicio/detención de la aplicación.
 
 
